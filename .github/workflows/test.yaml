@@ -10,5 +10,5 @@ jobs:
       - name: Use todo-mitsukeru-kun
         uses: GOD-oda/todo-mitsukeru-kun@v0.0.1
         env:
-          INPUT_GITHUB_TOKEN: ${{ secrets.TODO_MITSUKERU_KUN }}
+          INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           INPUT_TARGET_DIR: "src"
