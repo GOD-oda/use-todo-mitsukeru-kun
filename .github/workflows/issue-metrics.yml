@@ -16,8 +16,6 @@ jobs:
     - name: Get dates for last month
       shell: bash
       run: |
-        echo Repository owner: $GITHUB_REPOSITORY_OWNER
-        echo Repository name: $GITHUB_REPOSITORY
         # Calculate the first day of the previous month
         first_day=$(date -d "last month" +%Y-%m-01)
 
@@ -32,7 +30,7 @@ jobs:
       uses: github/issue-metrics@v2
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SEARCH_QUERY: 'repo:GOD-oda/use-todo-mitsukeru-kun is:pr created:${{ env.last_month }} -reason:"not planned"'
+        SEARCH_QUERY: 'repo:${{ GITHUB_REPOSITORY }} is:pr created:${{ env.last_month }} -reason:"not planned"'
 
     - name: Create issue
       uses: peter-evans/create-issue-from-file@v5
