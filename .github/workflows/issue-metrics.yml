@@ -16,6 +16,8 @@ jobs:
     - name: Get dates for last month
       shell: bash
       run: |
+        echo Repository owner: $GITHUB_REPOSITORY_OWNER
+        echo Repository name: $GITHUB_REPOSITORY
         # Calculate the first day of the previous month
         first_day=$(date -d "last month" +%Y-%m-01)
 
