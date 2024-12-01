@@ -16,3 +16,4 @@ jobs:
         env:
           INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           INPUT_TARGET_DIR: "src"
+          INPUT_ISSUE_LABELS: "todo,HOGE"
